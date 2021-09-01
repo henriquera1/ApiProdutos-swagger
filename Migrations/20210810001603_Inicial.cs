@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ApiProdutos.Migrations
 {
-    public partial class initial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,12 +16,14 @@ namespace ApiProdutos.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: true)
+                    nomeFruta = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Descricao = table.Column<string>(type: "longtext", nullable: true)
+                    descricaoFruta = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Preco = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
-                    Estoque = table.Column<int>(type: "int", nullable: false)
+                    fotoFruta = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    valorFruta = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    qtdFruta = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,13 +33,13 @@ namespace ApiProdutos.Migrations
 
             migrationBuilder.InsertData(
                 table: "Produtos",
-                columns: new[] { "Id", "Descricao", "Estoque", "Nome", "Preco" },
+                columns: new[] { "Id", "descricaoFruta", "fotoFruta", "nomeFruta", "qtdFruta", "valorFruta" },
                 values: new object[,]
                 {
-                    { 1, "Frutas frescas", 10, "Laranja", 4.50m },
-                    { 2, "Frutas frescas", 10, "Abacaxi", 6.00m },
-                    { 3, "Frutas frescas", 15, "Uva", 2.50m },
-                    { 4, "Frutas frescas", 5, "Melancia", 5.50m }
+                    { 1, "Frutas frescas", "http://d3ugyf2ht6aenh.cloudfront.net/stores/746/397/products/laranja_ceu1-53852a66aa8037bd7415221636647098-640-0.jpg", "Laranja", 10, 4.50m },
+                    { 2, "Frutas frescas", "", "Abacaxi", 10, 6.00m },
+                    { 3, "Frutas frescas", "", "Uva", 15, 2.50m },
+                    { 4, "Frutas frescas", "", "Melancia", 5, 5.50m }
                 });
         }
 

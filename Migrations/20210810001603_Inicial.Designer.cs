@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiProdutos.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210722025120_initial")]
-    partial class initial
+    [Migration("20210810001603_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,17 +24,20 @@ namespace ApiProdutos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Descricao")
+                    b.Property<string>("descricaoFruta")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Estoque")
-                        .HasColumnType("int");
+                    b.Property<string>("fotoFruta")
+                        .HasColumnType("longtext");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("nomeFruta")
                         .HasMaxLength(80)
                         .HasColumnType("varchar(80)");
 
-                    b.Property<decimal>("Preco")
+                    b.Property<int>("qtdFruta")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("valorFruta")
                         .HasPrecision(10, 2)
                         .HasColumnType("decimal(10,2)");
 
@@ -46,34 +49,38 @@ namespace ApiProdutos.Migrations
                         new
                         {
                             Id = 1,
-                            Descricao = "Frutas frescas",
-                            Estoque = 10,
-                            Nome = "Laranja",
-                            Preco = 4.50m
+                            descricaoFruta = "Frutas frescas",
+                            fotoFruta = "",
+                            nomeFruta = "Laranja",
+                            qtdFruta = 10,
+                            valorFruta = 4.50m
                         },
                         new
                         {
                             Id = 2,
-                            Descricao = "Frutas frescas",
-                            Estoque = 10,
-                            Nome = "Abacaxi",
-                            Preco = 6.00m
+                            descricaoFruta = "Frutas frescas",
+                            fotoFruta = "",
+                            nomeFruta = "Abacaxi",
+                            qtdFruta = 10,
+                            valorFruta = 6.00m
                         },
                         new
                         {
                             Id = 3,
-                            Descricao = "Frutas frescas",
-                            Estoque = 15,
-                            Nome = "Uva",
-                            Preco = 2.50m
+                            descricaoFruta = "Frutas frescas",
+                            fotoFruta = "",
+                            nomeFruta = "Uva",
+                            qtdFruta = 15,
+                            valorFruta = 2.50m
                         },
                         new
                         {
                             Id = 4,
-                            Descricao = "Frutas frescas",
-                            Estoque = 5,
-                            Nome = "Melancia",
-                            Preco = 5.50m
+                            descricaoFruta = "Frutas frescas",
+                            fotoFruta = "",
+                            nomeFruta = "Melancia",
+                            qtdFruta = 5,
+                            valorFruta = 5.50m
                         });
                 });
 #pragma warning restore 612, 618

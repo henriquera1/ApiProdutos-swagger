@@ -17,19 +17,19 @@ namespace ApiProdutos.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Produto>()
-                .Property(p => p.Nome)
+                .Property(p => p.nomeFruta)
                     .HasMaxLength(80);
             
             modelBuilder.Entity<Produto>()
-                .Property(p => p.Preco)
+                .Property(p => p.valorFruta)
                     .HasPrecision(10, 2);
 
             modelBuilder.Entity<Produto>()
                 .HasData(
-                    new Produto {Id= 1, Nome = "Laranja", Descricao = "Frutas frescas", Preco = 4.50M, Estoque = 10},
-                    new Produto {Id= 2, Nome = "Abacaxi", Descricao = "Frutas frescas", Preco = 6.00M, Estoque = 10},
-                    new Produto {Id= 3, Nome = "Uva", Descricao = "Frutas frescas", Preco = 2.50M, Estoque = 15},
-                    new Produto {Id= 4, Nome = "Melancia", Descricao = "Frutas frescas", Preco = 5.50M, Estoque = 5}
+                    new Produto {Id= 1, nomeFruta = "Laranja", descricaoFruta = "Frutas frescas", valorFruta = 4.50M, qtdFruta = 10, fotoFruta = "" },
+                    new Produto {Id= 2, nomeFruta = "Abacaxi", descricaoFruta = "Frutas frescas", valorFruta = 6.00M, qtdFruta = 10, fotoFruta= "" },
+                    new Produto {Id= 3, nomeFruta = "Uva", descricaoFruta = "Frutas frescas", valorFruta = 2.50M, qtdFruta = 15, fotoFruta= ""},
+                    new Produto {Id= 4, nomeFruta = "Melancia", descricaoFruta = "Frutas frescas", valorFruta = 5.50M, qtdFruta = 5, fotoFruta= ""}
                                        
                 );
 

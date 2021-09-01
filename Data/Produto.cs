@@ -8,9 +8,10 @@ namespace ApiProdutos.Data
     public class Produto
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public decimal Preco { get; set; }
-        public int Estoque { get; set; }
+        public string nomeFruta { get; set; }
+        public string descricaoFruta { get; set; }
+        public string fotoFruta { get; set; }
+        public decimal valorFruta { get; set; }
+        public int qtdFruta { get; set; }
     }
 }
